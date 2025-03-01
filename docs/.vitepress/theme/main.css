@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/.vitepress/geist.woff2) format("woff2");
+  unicode-range: u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 300   900;
+  font-display: swap;
+  src: url(/.vitepress/geist-mono.woff2) format("woff2");
+  unicode-range: u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd
+}
+
+/* sizes and stuff */
+
+h1, h2, h3, .geist {
+  font-family: "Geist", "Geist Fallback", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+p, label, a, li, .geist-mono {
+  font-family: "Geist Mono", "Geist Mono Fallback", monospace;
+  font-weight: 300;
+}
+
+p, label, a, li {
+  font-size: 14px;
+}
+
+/*  */
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--primary-foreground);
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+li {
+  padding-left: 8px;
+}
