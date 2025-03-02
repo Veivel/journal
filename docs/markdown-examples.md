@@ -1,8 +1,10 @@
-# Markdown Extension Examples
+---
+title: Markdown Extension Examples
+description: This page demonstrates some of the built-in markdown extensions provided by VitePress.
+# lastUpdated: 2025-03-01
+---
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
-
-## Syntax Highlighting
+## Syntax Highlighting!
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
 
@@ -22,7 +24,7 @@ export default {
 
 **Output**
 
-```js{4}
+```js
 export default {
   data () {
     return {
@@ -79,6 +81,12 @@ This is a dangerous warning.
 ::: details
 This is a details block.
 :::
+
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 ## More
 

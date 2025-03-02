@@ -6,14 +6,18 @@ import { Plugin } from 'vitepress'
 export default defineConfig({
   title: "journal",
   description: "veivel's blog; a documentation of life through the days & the years.",
+  lastUpdated: true,
+  // markdown: {
+  //   theme: "github-dark"
+  // },
   vite: {
     plugins: [
-      // @ts-ignore
+      /* @ts-ignore */
       tailwindcss(),
     ],
   },
   transformHead: ({ assets }) => {
-      // adjust the regex accordingly to match your font
+      /* adjust the regex accordingly to match your font */
       const myFontFile = assets.find(file => /font-name\.\w+\.woff2/)
       if (myFontFile) {
         return [

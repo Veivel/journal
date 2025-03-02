@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@import "./variables.css";
+@import "./vpdoc.css";
+@import "./code.css";
+@import "./customblock.css";
+
+pre, code {
+  font-size: 12px;
+}
+
+/*  */
+
+strong {
+  font-weight: 700;
+}
+
+/* span[class="lang"] {
+  height: 0;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.vp-doc div {
+  display: flex;
+  flex-direction: column;
+} */
+
+.vp-doc {
+  h1 {
+    font-weight: 900;
+  }
+  h2 {
+    font-weight: 800;
+  }
+}

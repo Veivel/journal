@@ -9,8 +9,8 @@ dependencies:
     specifier: ^4.0.9
     version: 4.0.9(vite@6.2.0)
   '@veivel/carboncss':
-    specifier: ^1.0.4
-    version: 1.0.5
+    specifier: ^1.0.9
+    version: 1.0.9
   tailwindcss:
     specifier: ^4.0.9
     version: 4.0.9
@@ -1082,8 +1082,8 @@ packages:
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
     dev: false
 
-  /@veivel/carboncss@1.0.5:
-    resolution: {integrity: sha512-5ivwh3uRNWSH+cKxIl6oX2uDx90QWrOZFbOjAbSjMedGQ4AvYYvt5lHdieK2WUT2zEAwVzn8vdK1bgO5MjpvUg==}
+  /@veivel/carboncss@1.0.9:
+    resolution: {integrity: sha512-rvOKTOTJR3hrNl8TLl1nQAyOf3b+C8DuX0+n+Jb/DAnC1af9qapIBXmxLYxlI4ORnpXadNGMVMUKnWhXu6DSlg==}
     dev: false
 
   /@vitejs/plugin-vue@5.2.1(vite@5.4.14)(vue@3.5.13):
