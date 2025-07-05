@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { RefSymbol } from '@vue/reactivity';
-import { useData } from 'vitepress'
+  import { RefSymbol } from '@vue/reactivity';
+  import { useData } from 'vitepress'
 
-// https://vitepress.dev/reference/runtime-api#usedata
-const { site, frontmatter, ...params } = useData()
+  // https://vitepress.dev/reference/runtime-api#usedata
+  const { site, frontmatter, ...params } = useData()
 </script>
 
 <template>
@@ -20,9 +20,9 @@ const { site, frontmatter, ...params } = useData()
       <p>{{ site.description }}</p>
       <br/>
       <ul>
-        <li><a href="/markdown-examples.html">Markdown Examples</a></li>
-        <li><a href="/api-examples.html">API Examples</a></li>
-        <li><a href="/demo.html">Demo</a></li>
+        <li><a href="/posts/markdown-examples">Markdown Examples</a></li>
+        <li><a href="/posts/api-examples">API Examples</a></li>
+        <li><a href="/posts/demo">Demo</a></li>
       </ul>
     </div>
   </div>
@@ -40,14 +40,19 @@ const { site, frontmatter, ...params } = useData()
     </p>
     <div class="vp-doc relative py-8 px-4 sm:px-[calc(50dvw-400px)] 2xl:px-[calc(50dvw-400px)] flex flex-col h-fit">
       <h1 class="text-neutral-200">{{ frontmatter.title }}</h1>
-      <p class="text-neutral-200">{{ frontmatter.description }}</p>
+      <p class="text-neutral-200">{{ frontmatter.description || "by Veivel"}}</p>
       <Content />
     </div>
     <span class="geist-mono text-xs flex items-center justify-between gap-2">
       <div>
         Page last updated: 
         <span class="text-primary-foreground">
-          {{ params && new Date(params.page.value["lastUpdated"] as number).toUTCString() }}
+          {{ 
+            params 
+            && params.page.value["lastUpdated"] as number > 0 
+            ? new Date(params.page.value["lastUpdated"] as number).toUTCString() 
+            : 'N/A'
+          }}
         </span>
       </div>
     </span>
