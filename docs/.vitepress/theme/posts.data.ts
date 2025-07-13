@@ -11,6 +11,8 @@ const data = createContentLoader('posts/*.md', {
     // the final result is what will be shipped to the client.
     return rawData.sort((a, b) => {
       return +new Date(b.frontmatter.lastUpdated) - +new Date(a.frontmatter.lastUpdated)
+    }).filter((page) => {
+      return page.frontmatter.published
     }).map((page) => {
       return page
     })

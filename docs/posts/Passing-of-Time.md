@@ -3,7 +3,7 @@ title: Passing of Time
 lastUpdated: 2024-07-03 21:11:58
 tags:
 categories: philosophy
-published: true
+published: false
 thumbnail: /assets/thumbnails/hourglass.jpg
 ---
 
