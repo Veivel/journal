@@ -4,17 +4,16 @@
  * @returns A formatted, human-readable date and time string.
  */
 export function formatTimestamp(isoString: string): string {
+  if (isoString === undefined || isoString.length === 0) {
+    return ""
+  }
   const date = new Date(isoString);
 
-  // Define formatting options. 'long' gives "July 11, 2023".
-  // 'medium' gives "11:53:00 PM".
   const options: Intl.DateTimeFormatOptions = {
     dateStyle: 'long',
-    // timeStyle: 'medium',
-    timeZone: 'Asia/Jakarta', // Converts the time to Western Indonesia Time (WIB)
+    timeZone: 'Asia/Jakarta',
   };
 
-  // Create a formatter for the Indonesian locale ('id-ID') and format the date.
   const formatter = new Intl.DateTimeFormat('en-US', options);
   return formatter.format(date);
 }
