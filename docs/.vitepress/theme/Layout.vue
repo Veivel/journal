@@ -58,7 +58,7 @@
       </p>
       <Content />
     </div>
-    <span class="geist-mono text-xs flex items-center justify-between gap-2">
+    <!-- <span class="geist-mono text-xs flex items-center justify-between gap-2">
       <div>
         Page last updated: 
         <span class="text-primary-foreground">
@@ -70,6 +70,6 @@
           }}
         </span>
       </div>
-    </span>
+    </span> -->
   </div>
 </template>

@@ -2,6 +2,7 @@
 title: Busyness as Proxy for Productivity
 lastUpdated: 2023-07-11 16:53:00
 tags: philosophy
+published: false
 ---
 > “Busyness as Proxy for Productivity: In the absence of clear indicators of what it means to be productive and valuable in their jobs, many knowledge workers turn back toward an industrial indicator of productivity: doing lots of stuff in a visible manner.” – Cal Newport, author of Deep Work
 

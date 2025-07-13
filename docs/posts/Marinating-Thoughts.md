@@ -4,6 +4,7 @@ date: 2023-09-03 21:08:26
 tags:
 categories: philosophy
 thumbnail: /assets/thumbnails/boil.jpg
+published: false
 ---
 
 I think it's important to have marinating thoughts. I'm not sure if that's an existing term, so to define it: "marinating thoughts" are thoughts of your mind that occur when you dedicate time to let yourself sit down quietly and allow your mind... to marinate. No phones, no gadgets, no music, no socializing, nothing – just you and your thoughts.
