@@ -5,7 +5,7 @@ import { Plugin } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "journal",
-  description: "veivel's blog; a documentation of life through the days & the years.",
+  description: "veivel's blog; a documentation of life through the days & years.",
   lastUpdated: true,
   // markdown: {
   //   theme: "github-dark"
