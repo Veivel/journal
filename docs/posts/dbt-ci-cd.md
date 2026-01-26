@@ -1,15 +1,15 @@
 ---
 title: How we run DBT on our CI/CD
-lastUpdated: 2026-01-24 00:00
+lastUpdated: 2026-01-26 00:00
 tags: tech
 published: true
 ---
 
 ## Background
 
-Data professionals today [love](https://datatalks.club/blog/how-do-data-professionals-use-data-engineering-tools-and-practices.html#:~:text=or%20manual%20solutions.-,dbt,-%3A%20Leads%20at) dbt. Short for Data Build Tool, it is a tool that simplifies data transformation by using a SQL-first approach rather than making do with code, scripts, or DAGs. This is a shift from a traditionally procedural approach to a declarative approach. 
+Data professionals today [love](https://datatalks.club/blog/how-do-data-professionals-use-data-engineering-tools-and-practices.html#:~:text=or%20manual%20solutions.-,dbt,-%3A%20Leads%20at) dbt. Short for Data Build Tool, it is a tool that simplifies data transformation by using a SQL-first approach rather than relying on complex scripts or manual DAGs. This is a shift from a traditionally procedural approach to a declarative approach.
 
-This allows data teams to move faster by enabling data practicioners – not just data engineers, but also data analysts – by turning data transformation from an engineering task to a data modeling task. 
+This allows data teams to move faster by enabling data practitioners – not just data engineers, but also data analysts – by turning data transformation from an engineering task to a data modeling task. 
 
 Do you know what everyone loves more than dbt, though?
 
@@ -17,7 +17,7 @@ Automation.
 
 In our team, dbt is embedded into our development and deployment process. However, integrating dbt into automated deployment may not be easy due to long build times and environment-specific data errors causing **slow feedback loops for the team**. 
 
-For a fast-paced startup, this is especially a problem. Imagine waiting 80 minutes for your new data model to be built and deployed, only for GitHub Actions to spew out an error from a failed unit test caused by upstream data in production. This was the exact problem our team was facing. 
+For a fast-paced startup, this is especially a problem. Imagine waiting 80 minutes for your new data model to be built and deployed, only for GitHub Actions to spew out an error from a failed unit test caused by upstream data in production. This was the exact problem our team was facing: scaling bottlenecks. 
 
 As our data warehouse scaled, our data models increased in quantity while our data size grew in volume. Our CI/CD (Continuous Integration / Continuous Delivery) pipeline went from taking 20 minutes, to 40, to 60, and then before we realized it became 2 hours. I decided to take initiative and fix this.
 
@@ -31,7 +31,7 @@ We had three workflows on GitHub Actions: one for PRs, one for deployment to dev
 
 - **Prod**: Run CI then deliver to prod environment
 
-Functionally, this worked, but it had its problems. I listed down the key issues we wanted to solve:
+Functionally, this worked, but it had its problems. I identified the key issues we wanted to solve:
 
 1. **Lack of traceability**
 
@@ -47,7 +47,7 @@ Functionally, this worked, but it had its problems. I listed down the key issues
 
 4. **Many steps are redundant**
 
-    In all of our workflows, we rebuild all data models and reran our SQL linter/formatter for all files in CI/CD, which is redundant for files and data models that remain unchanged.
+    In all of our workflows, we rebuild all data models and rerun our SQL linter/formatter for all files in CI/CD, which is redundant for files and data models that remain unchanged.
 
 ## Solution
 
@@ -59,7 +59,7 @@ In the end, this is what we had planned:
 
 The flow didn't change too drastically, as I had built this on top of the existing CI/CD pipeline. What mattered more, however, was **the implementation**. There were a few changes that I made:
 
-1. **Run linter only in PR**; remove sqlfluff linter in dev & prod workflows to as they are redundant steps
+1. **Run linter only in PR**; remove sqlfluff linter in dev and prod workflows as they are redundant steps
 
 2. **Run linter only on SQL files that were added or modified**; do not run linter on unchanged files as they are redundant
 
@@ -184,7 +184,7 @@ uv run dbt build \
 
 This is where it gets fun. We run `dbt build` to run models, snapshots, and seeds. We exclude tests with `--exclude-resource-type test` and `--exclude-resource-type unit_test`. We use `dbt build` rather than `dbt run` because run only includes models, while build includes snapshots and seeds as well.
 
-The remaining flags are for [slim CI](https://docs.getdbt.com/best-practices/best-practice-workflows#run-only-modified-models-to-test-changes-slim-ci): `--defer` allows us to [sandbox our CI](https://docs.getdbt.com/reference/node-selection/defer) by taking upstream models from an existing environment, rather than re-running everything upstream. `--select state:modified+` takes our modified models and everything downstream, ensuring downstream models don't get broken.
+The remaining flags are for [slim CI](https://docs.getdbt.com/best-practices/best-practice-workflows#run-only-modified-models-to-test-changes-slim-ci): `--defer` allows us to [sandbox our CI](https://docs.getdbt.com/reference/node-selection/defer) by taking upstream models from an existing environment, rather than re-running everything upstream. `--select state:modified+` takes our modified models and the `+` includes everything downstream, ensuring downstream models don't get broken. This is 'slim' as opposed to taking *all* existing models and rebuilding them.
 
 4. **Run dbt tests**
 
