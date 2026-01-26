@@ -7,6 +7,14 @@
   color: var(--vp-c-text-2);
 }
 
+.text-muted-1 {
+  color: var(--vp-c-text-2);
+}
+
+.text-muted-2 {
+  color: var(--vp-c-text-3);
+}
+
 .custom-block.info {
   border-color: var(--vp-custom-block-info-border);
   color: var(--vp-custom-block-info-text);

@@ -20,7 +20,7 @@
  }
  
  .vp-doc h2 {
-   margin: 16px 0 16px;
+   margin: 4px 0 16px 0;
    border-bottom: 1px solid var(--vp-c-divider);
    /* padding-top: 16px; */
    padding-bottom: 16px;
@@ -30,14 +30,14 @@
  }
  
  .vp-doc h3 {
-   margin: 32px 0 0;
+   margin: 4px 0 8px 0;
    letter-spacing: -0.01em;
    line-height: 28px;
    font-size: 20px;
  }
  
  .vp-doc h4 {
-   margin: 24px 0 0;
+   margin: 2px 0 4px 0;
    letter-spacing: -0.01em;
    line-height: 24px;
    font-size: 18px;
@@ -94,7 +94,7 @@
  
  .vp-doc p,
  .vp-doc summary {
-   margin: 16px 0;
+   margin: 14px 0;
  }
  
  .vp-doc p {
@@ -139,8 +139,8 @@
  
  .vp-doc ul,
  .vp-doc ol {
-   padding-left: 1.25rem;
-   margin: 16px 0;
+   padding-left: 1.5rem;
+   margin: 4px 0 4px;
  }
  
  .vp-doc ul {
@@ -157,7 +157,7 @@
  
  .vp-doc li > ol,
  .vp-doc li > ul {
-   margin: 8px 0 0;
+   margin: 8px 0;
  }
  
  /**

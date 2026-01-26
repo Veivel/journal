@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { RefSymbol } from '@vue/reactivity';
-  import { useData } from 'vitepress'
+  import { ContentData, useData } from 'vitepress'
 
   // https://vitepress.dev/reference/runtime-api#usedata
   const { site, frontmatter, ...params } = useData()
@@ -21,10 +21,12 @@
     </a>
     <div class="relative py-8 px-4 sm:px-[calc(50dvw-400px)] 2xl:px-[calc(50dvw-400px)] flex flex-col h-fit">
       <h1 class="special-underline w-fit">{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
-      <br/>
-      <li v-for="post of posts">
-        <a :href="post.url">{{ post.frontmatter.title }}</a>
+      <p class="mb-4">{{ site.description }}</p>
+      <li class="ml-4" v-for="post of posts">
+        <p class="flex gap-2">
+          <span class="text-muted-1">{{ post.frontmatter.lastUpdated.substring(0, 10) }}</span>
+          <a class="text-white" :href="post.url">{{ post.frontmatter.title }}</a>
+        </p>
       </li>
     </div>
   </div>
