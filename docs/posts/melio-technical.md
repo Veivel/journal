@@ -5,13 +5,13 @@ categories: tech
 published: true
 ---
 
-This is going to a fairly short blog explaining the architecture behind MelioSMP, a Minecraft server that I used to operate for over 900 monthly active players. 
+This is going to be a fairly short blog explaining the architecture behind MelioSMP, a Minecraft server that I used to operate for over 900 monthly active players. 
 
-While a lot of you probably know that you can just start your Minecraft server by just running the command `java server.jar` in a terminal and leave it there, it's like saying you can just run `docker compose up -d` for your web application in production: sure, that could work, but wouldn't it better to have proper infrastructure in place?
+While a lot of you probably know that you can just start your Minecraft server by just running the command `java server.jar` in a terminal and leave it there, it's like saying you can just run `docker compose up -d` for your web application in production: sure, that could work, but wouldn't it be better to have proper infrastructure in place?
 
 ## The Problems
 
-The first thing you need to know is that the biggest constraint of designing this system was cost: we didn't make that much money, and any money we did make was always reinvested into the server. 
+The first thing you need to know is that the biggest constraint in designing this system was cost: we didn't make that much money, and any money we did make was always reinvested into the server. 
 
 The reason we did that was to continuously improve reliability and player experience. Running a Minecraft server takes far more resources than a NodeJS or Springboot server, so with a large enough number of players your server will inevitably start to lag. Additionally, with our use of the community-developed Fabric (a framework that provides an API to the game) and unofficial mods, you run into crashes pretty frequently – either through bugs and unhandled errors, or from running out of resources. So that's the second thing: we optimized the system's design for reliability and performance.
 
@@ -34,11 +34,11 @@ Architecture wasn't on my mind on the first day, I kept it very simple with only
 
 The most glaring issue with this, however, was that every time the server OOM-ed (or really, whenever the machine died), I would lose access to our Prometheus and thus any form of visibility. This happened frequently, as you may have guessed.
 
-Another issue was the fact that I only had `screen` terminal session running `java server.jar` in the background. This was kinda stupid because you'd have scenarios where I was tinkering on the Minecraft server console while other players were on the server, but I exitted the terminal instead of detaching from the `screen` session, shutting the server down and disconnecting every player at once (whoopsie).
+Another issue was the fact that I only had a `screen` terminal session running `java server.jar` in the background. This was kinda stupid because you'd have scenarios where I was tinkering on the Minecraft server console while other players were on the server, but I exitted the terminal instead of detaching from the `screen` session, shutting the server down and disconnecting every player at once (whoopsie).
 
-Additionally, I wanted to have a testing server or Creative Mode world for players who wanted somewhere to design schematics, test their farms, or experiment with game mechanics before applying it in Survival Mode on our main server. This had to be a separate server entirely, because I also needed a 'staging server' to develop my custom mods. I tried to put the testing server and the main server together on one machine, but there were simply not enough resources. Because there was no resource isolation, an OOM on the testing server was able to starve resources from the main server - players felt the impact of this.
+Additionally, I wanted to have a testing server or Creative Mode world for players who wanted somewhere to design schematics, test their farms, or experiment with game mechanics before applying them in Survival Mode on our main server. This had to be a separate server entirely, because I also needed a 'staging server' to develop my custom mods. I tried to put the testing server and the main server together on one machine, but there were simply not enough resources. Because there was no resource isolation, an OOM on the testing server was able to starve resources from the main server - players felt the impact of this.
 
-With the issues of our limited architecture, on top of the server lag that players were experiencing (we attributed this to a lack of resources, because the server's RAM and CPU usage were maxxing out during peak hours), we wasted no time to upgrade our systems the moment we had the financial capacity to.
+With the issues of our limited architecture, on top of the server lag that players were experiencing (we attributed this to a lack of resources, because the server's RAM and CPU usage were maxing out during peak hours), we wasted no time to upgrade our systems the moment we had the financial capacity to.
 
 ## A Whole New World
 
