@@ -100,7 +100,7 @@ There were a few minor flaws that I desperately wanted to fix, but I just couldn
 
 While two of our team members went to bed, me and the other remaining member stayed up to finished the pitch video and complete our submission on Devpost with less than three hours to the deadline. We immediately went to sleep after.
 
-![](/assets/garuda-hacks/find-destinations.png)
+![Pitch Video snapshot](/assets/garuda-hacks/find-destinations.png)
 <p class="text-center text-muted-1">A snapshot of the pitch video</p>
 
 #### Post-Hack
@@ -123,7 +123,7 @@ And then **Nosh** popped up on the screen.
 
 It honestly caught me by surprise. I was mid-zoning out, overthinking it all, when this popped up and our pitch video was played out. But hey! It's something, and I was happy about it. Seeing this result made me feel like all the sinus headaches were worth it.
 
-![](/assets/garuda-hacks/devpost.png)
+![Screenshot of DevPost submission](/assets/garuda-hacks/devpost.png)
 <p class="text-center text-muted-1">Our submission's <a href="https://devpost.com/software/nosh">DevPost page</a>.</p>
 
 We went out for a celebratory dinner but were all too exhausted to do anything else, so we headed straight home afterwards.
