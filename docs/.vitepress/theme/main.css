@@ -1,6 +1,6 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+@import "tailwindcss";
 
 @import "./variables.css";
 @import "./vpdoc.css";
@@ -25,6 +25,10 @@ code, pre, .geist-mono,
 .vp-doc :not(pre) > code,
 .vp-doc [class*='language-'] code {
   font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+.roboto-mono {
+  font-family: "Roboto Mono", ui-monospace, monospace;
 }
 
 /*  */
